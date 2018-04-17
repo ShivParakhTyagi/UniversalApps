@@ -8,6 +8,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="ContainerStackPanel" Background="LightSlateGray" VerticalAlignment="Stretch">
+                    <TextBox x:Name="InputTextBox" />
+                    <Button Content="Start" Click="Start_OnClick" />
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <TextBox x:Name="OutputTextBox" AcceptsReturn="True"/>
 
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Page>
