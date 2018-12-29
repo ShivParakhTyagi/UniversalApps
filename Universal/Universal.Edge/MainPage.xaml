@@ -7,7 +7,33 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  HorizontalAlignment="Left"  MinWidth="400" Padding="12,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button  Grid.Row="0" x:Name="StartOCRButton" Click="StartOCRButton_OnClick" Content="Begin OCR on PDF FILE"></Button>
+        <TextBox Grid.Row="1"  x:Name="OcrResultTextBox" AcceptsReturn="True" HorizontalAlignment="Left" HorizontalContentAlignment="Left" TextWrapping="Wrap"></TextBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="JapLinesListView" Grid.Column="0" Header="Japanese Line Texts" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBox Text="{Binding Text}"></TextBox>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="EngLinesListView" Grid.Column="1" Header="English Line Texts" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBox Text="{Binding Text}"></TextBox>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Page>

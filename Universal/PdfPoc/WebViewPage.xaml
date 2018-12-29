@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="PdfPoc.MainPage"
+    x:Class="PdfPoc.WebViewPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:PdfPoc"
@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="PrintButton" Click="PrintButton_OnClick">PRINT</Button>
+
     </Grid>
 </Page>

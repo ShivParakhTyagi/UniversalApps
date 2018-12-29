@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="Universal.Edge.ImagePoc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Universal.Edge"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0"  Content="tryMerge" Click="ButtonBase_OnClick" />
+        <Image  Grid.Row="1" Grid.Column="0" x:Name="Image1" ></Image>
+        <Image  Grid.Row="1" Grid.Column="1" x:Name="Image2" ></Image>
+        <Image  Grid.Row="2" Grid.Column="0" x:Name="WriteImage1" ></Image>
+        <Image  Grid.Row="2" Grid.Column="1" x:Name="WriteImage2" ></Image>
+        <Image  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" x:Name="BlendedImage" ></Image>
+    </Grid>
+</Page>
