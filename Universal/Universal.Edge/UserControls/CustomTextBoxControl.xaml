@@ -1,0 +1,157 @@
+﻿<UserControl
+    x:Class="Universal.Edge.UserControls.CustomTextBoxControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="120"
+    d:DesignWidth="324">
+    <UserControl.Resources>
+        <Style x:Key="ResizeControlThumbStyle" TargetType="Thumb">
+            <Setter Property="Background" Value="{ThemeResource ThumbBackground}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ThumbBorderBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPointerOver"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <!--<Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}"/>
+                            <Border x:Name="BackgroundPointerOver" BorderBrush="{ThemeResource ThumbBorderBrushPointerOver}" BorderThickness="{TemplateBinding BorderThickness}" Background="{ThemeResource ThumbBackgroundPointerOver}" Opacity="0"/>
+                            <Border x:Name="BackgroundPressed" BorderBrush="{ThemeResource ThumbBorderBrushPressed}" BorderThickness="{TemplateBinding BorderThickness}" Background="{ThemeResource ThumbBackgroundPressed}" Opacity="0"/>-->
+                            <Polyline x:Name="Background" Points="80 80, 0 80, 80 0" StrokeThickness="20" Stroke="Transparent" Fill="{StaticResource SystemControlHighlightAccentBrush}" />
+                            <Polyline x:Name="BackgroundPointerOver" Points="80 80, 0 80, 80 0" StrokeThickness="20" Stroke="Transparent" Fill="{StaticResource SystemControlHighlightAccentBrush}" Opacity="0" />
+                            <Polyline x:Name="BackgroundPressed" Points="80 80, 0 80, 80 0" StrokeThickness="20" Stroke="Transparent" Fill="{StaticResource SystemControlHighlightAccentBrush}" Opacity="0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MoveControlThumbStyle" TargetType="Thumb">
+            <Setter Property="Background" Value="{ThemeResource ThumbBackground}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ThumbBorderBrush}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPointerOver"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPointerOver1"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background1"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background"/>
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundPressed1"/>
+                                            <DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Background1"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="Background1" StrokeThickness="4" Stroke="{StaticResource SystemControlHighlightAccentBrush}" />
+                            <Rectangle x:Name="BackgroundPointerOver1" StrokeThickness="4" Stroke="{StaticResource SystemControlHighlightAccentBrush}" Opacity="0" />
+                            <Rectangle x:Name="BackgroundPressed1" StrokeThickness="4" Stroke="{StaticResource SystemControlHighlightAccentBrush}" Opacity="0" />
+                            <Rectangle x:Name="Background" StrokeThickness="24" Stroke="Transparent" />
+                            <Rectangle x:Name="BackgroundPointerOver" StrokeThickness="24" Stroke="Transparent" Opacity="0" />
+                            <Rectangle x:Name="BackgroundPressed" StrokeThickness="24" Stroke="Transparent" Opacity="0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid >
+        <Thumb x:Name="MoveThumb"  Margin="-18" 
+               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+               DragDelta="MoveGrabDelta" Loaded="MoveGrabLoaded" DragStarted="MoveGrabStarted" DragCompleted="MoveGrabCompleted" 
+               Tapped="Control_OnTapped" Visibility="Collapsed" Style="{StaticResource MoveControlThumbStyle}" 
+               />
+        <Grid x:Name="ResizableGrid" Width="430" Height="120" BorderThickness="0" PointerPressed="ResizableGrid_OnPointerPressed">
+            <Grid BorderBrush="Red" 
+                  BorderThickness="2" 
+                  Background="Red">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Canvas.ZIndex="1" ><!--Style="{StaticResource TransparentButtonStyle}"--> 
+                    <Button x:Name="RemoveButton"  HorizontalAlignment="Right" Margin="4" Click="RemoveButton_Clicked">
+                        <Button.Content>
+                            <FontIcon Glyph="&#xE894;" FontSize="30"/>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" Background="#44990099" Tapped="Control_OnTapped" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Background="Transparent" Tapped="Control_OnTapped" >
+                        <StackPanel Orientation="Horizontal" x:Name="LabelGrid" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                            <TextBlock x:Name="CreatedByTextBlock" Text="{Binding UserName}"
+                                       Foreground="Black" 
+                                       FontSize="28" TextAlignment="Right" TextWrapping="Wrap" Margin="4" FontWeight="Bold"/>
+                            <TextBlock x:Name="CreatedDateTimeTextBlock" Text="{Binding AddedOnLocal}"
+                                       Foreground="Black"
+                                       FontSize="28" TextAlignment="Right" TextWrapping="Wrap" Margin="4" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Grid>
+                    <Thumb x:Name="MoveThumb2"
+                           DragDelta="MoveGrabDelta" Loaded="MoveGrabLoaded" DragCompleted="MoveGrabCompleted"
+                           
+                           Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="Transparent" 
+                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tapped="Control_OnTapped" />
+                    <Grid Grid.Row="1" VerticalAlignment="Top"
+                          Background="Transparent" Tapped="Control_OnTapped" >
+                        <TextBox x:Name="CommentTextBox"
+                                 HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"
+                                 Foreground="Black"
+                                 Text="{Binding Text,Mode=OneWay}"  AcceptsReturn="True" TextWrapping="Wrap"
+                                 Margin="4,0,0,0"  IsTabStop="False"
+                                 IsSpellCheckEnabled="False" Tapped="Control_OnTapped" IsEnabled="{x:Bind IsSelected}"
+                                 VerticalContentAlignment="Top"
+                                 />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Thumb x:Name="ResizeThumb" Height="80" Width="80" Margin="0,0,-18,-18" 
+               HorizontalAlignment="Right" VerticalAlignment="Bottom" DoubleTapped="GrabDoubleTapped" 
+               DragDelta="GrabDelta" Loaded="GrabLoaded" DragStarted="GrabStarted" DragCompleted="GrabCompleted" 
+               Tapped="Control_OnTapped" Visibility="Collapsed"  />
+    </Grid>
+</UserControl>
