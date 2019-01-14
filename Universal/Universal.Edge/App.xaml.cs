@@ -67,7 +67,8 @@ namespace Universal.Edge
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     //rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                    rootFrame.Navigate(typeof(CanvasPage), e.Arguments);
+                    //rootFrame.Navigate(typeof(CanvasPage), e.Arguments);
+                    rootFrame.Navigate(typeof(GetMacAddressPage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
