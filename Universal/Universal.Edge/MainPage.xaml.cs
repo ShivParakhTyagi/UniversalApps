@@ -248,7 +248,7 @@ namespace Universal.Edge
                                                 prevGons,
                                                 prevGons?.PaddedPoints ?? new List<Point>(),
                                                 pair.Rct.Mid,
-                                                -1
+                                                -2
                                             );
 
                                         if (pair.Rct.Left.Up == nextFit.Up &&
@@ -262,8 +262,15 @@ namespace Universal.Edge
                                                     pts = pgon.Points;
                                                 }
                                                 //Force Move
-                                                var newX = pts.Min(x => x.X) - 1;
-                                                pair.Rct.Left.Up = new Point(newX, nextFit.Up.Y);
+                                                var newX = pts.Min(x => x.X);
+                                                var newPts = pts.Where(x => x.X == newX).ToArray();
+                                                var maxY = newPts.Max(y => y.Y);
+                                                var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
+                                                
+                                                var intersectingPoint = Lins.GetPointPassingFromLineABIntersectsAtY(pair.Rct.Left.Down,
+                                                    newPoint, pair.Rct.Left.Up.Y);
+
+                                                pair.Rct.Left.Up = intersectingPoint;
                                                 pair.Rct.Left.Down = new Point(pair.Rct.Left.Down.X - 1,
                                                     pair.Rct.Left.Down.Y);
                                             }
@@ -306,7 +313,7 @@ namespace Universal.Edge
                                                 nextPgon,
                                                 nextPgon?.PaddedPoints ?? new List<Point>(),
                                                 pair.Rct.Mid,
-                                                1
+                                                2
                                             );
 
                                         if (pair.Rct.Right.Up == nextFit.Up &&
@@ -320,8 +327,18 @@ namespace Universal.Edge
                                                     pts = pgon.Points;
                                                 }
                                                 //Force Move
-                                                var newX = pts.Max(x => x.X) + 1;
-                                                pair.Rct.Right.Up = new Point(newX, nextFit.Up.Y);
+                                                //var newX = pts.Max(x => x.X) + 1;
+                                                //pair.Rct.Right.Up = new Point(newX, nextFit.Up.Y);
+                                                //Force Move
+                                                var newX = pts.Max(x => x.X);
+                                                var newPts = pts.Where(x => x.X == newX).ToArray();
+                                                var maxY = newPts.Max(y => y.Y);
+                                                var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
+
+                                                var intersectingPoint = Lins.GetPointPassingFromLineABIntersectsAtY(pair.Rct.Right.Down,
+                                                    newPoint, pair.Rct.Right.Up.Y);
+
+                                                pair.Rct.Right.Up = intersectingPoint;
                                                 pair.Rct.Right.Down = new Point(pair.Rct.Right.Down.X - 1,
                                                     pair.Rct.Right.Down.Y);
                                             }
@@ -482,10 +499,22 @@ namespace Universal.Edge
                                         }
 
                                         //Force Move
-                                        var newX = pts.Min(x => x.X) - 1;
-                                        left.Up = new Point(newX, nextFit.Up.Y);
+                                        var newX = pts.Min(x => x.X);
+                                        var newPts = pts.Where(x => x.X == newX).ToArray();
+                                        var maxY = newPts.Max(y => y.Y);
+                                        var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
+
+                                        var intersectingPoint = Lins.GetPointPassingFromLineABIntersectsAtY(left.Down,
+                                            newPoint, left.Up.Y);
+
+                                        left.Up = intersectingPoint;
                                         left.Down = new Point(left.Down.X - 1,
                                             left.Down.Y);
+                                        ////Force Move
+                                        //var newX = pts.Min(x => x.X) - 1;
+                                        //left.Up = new Point(newX, nextFit.Up.Y);
+                                        //left.Down = new Point(left.Down.X - 1,
+                                        //    left.Down.Y);
                                     }
                                 }
                                 else
@@ -547,10 +576,20 @@ namespace Universal.Edge
                                         }
 
                                         //Force Move
-                                        var newX = pts.Max(x => x.X) + 1;
-                                        right.Up = new Point(newX, nextFit.Up.Y);
-                                        right.Down = new Point(right.Down.X - 1,
-                                            right.Down.Y);
+                                        var newX = pts.Max(x => x.X);
+                                        var newPts = pts.Where(x => x.X == newX).ToArray();
+                                        var maxY = newPts.Max(y => y.Y);
+                                        var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
+
+                                        var intersectingPoint = Lins.GetPointPassingFromLineABIntersectsAtY(right.Down,
+                                            newPoint, right.Up.Y);
+
+                                        right.Up = intersectingPoint;
+                                        ////Force Move
+                                        //var newX = pts.Max(x => x.X) + 1;
+                                        //right.Up = new Point(newX, nextFit.Up.Y);
+                                        //right.Down = new Point(right.Down.X - 1,
+                                        //    right.Down.Y);
                                     }
                                 }
                                 else
@@ -1024,6 +1063,41 @@ namespace Universal.Edge
             result.Y = start1.Y + (r * (end1.Y - start1.Y));
 
             return result;
+        }
+
+
+        public static Point GetPointPassingFromLineABIntersectsAtY(Point a, Point b, double y)
+        {
+            /*
+             * y=mx+c
+             */
+            var m = FindSlope(a, b);
+            var c = FindCoefficient(a, m);
+            var x = (y - c) / m;
+            return new Point(x, y);
+        }
+
+        public static Point GetPointPassingFromLineABIntersectsAtX(Point a, Point b, double x)
+        {
+            /*
+             * y=mx+c
+             */
+            var m = FindSlope(a, b);
+            var c = FindCoefficient(a, m);
+            var y = m * x + c;
+            return new Point(x, y);
+        }
+
+        public static double FindSlope(Point a, Point b)
+        {
+            var m = (b.Y - a.Y) / (b.X - a.X);
+            return m;
+        }
+
+        public static double FindCoefficient(Point a, double slope)
+        {
+            var c = a.Y - slope * a.X;
+            return c;
         }
 
     }

@@ -37,7 +37,7 @@
             <Slider x:Name="SpeedSlider" Maximum="10000" Minimum="1" Value="2000" Header="Speed" StepFrequency="10" />
         </Grid>
         <Grid Grid.Row="2" >
-            <ScrollViewer ZoomMode="Enabled">
+            <ScrollViewer ZoomMode="Enabled" HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled" HorizontalSnapPointsAlignment="Center" VerticalSnapPointsAlignment="Center" >
                 <Canvas Name="MyCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
                     <Image x:Name="MyImage" Stretch="Uniform" Canvas.Top="0" Canvas.Left="0" /> 
                 </Canvas>
