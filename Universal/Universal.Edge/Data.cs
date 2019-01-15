@@ -41,6 +41,78 @@ namespace Universal.Edge
             public double X { get; set; }
             public double Y { get; set; }
         }
+        private static string Res = "[{\"Line1Index\":0,\"Line2Index\":1,\"PolygonIndex\":0,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":false},{\"Line1Index\":1,\"Line2Index\":2,\"PolygonIndex\":1,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.Right\",\"IsTubepresent\":true},{\"Line1Index\":2,\"Line2Index\":3,\"PolygonIndex\":1,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":false},{\"Line1Index\":3,\"Line2Index\":4,\"PolygonIndex\":2,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.Right\",\"IsTubepresent\":true},{\"Line1Index\":4,\"Line2Index\":5,\"PolygonIndex\":3,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":5,\"Line2Index\":6,\"PolygonIndex\":3,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":false},{\"Line1Index\":6,\"Line2Index\":7,\"PolygonIndex\":4,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":7,\"Line2Index\":8,\"PolygonIndex\":5,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":8,\"Line2Index\":9,\"PolygonIndex\":5,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":false},{\"Line1Index\":9,\"Line2Index\":10,\"PolygonIndex\":6,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":10,\"Line2Index\":11,\"PolygonIndex\":7,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":11,\"Line2Index\":12,\"PolygonIndex\":8,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":12,\"Line2Index\":13,\"PolygonIndex\":8,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":false},{\"Line1Index\":13,\"Line2Index\":14,\"PolygonIndex\":9,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":14,\"Line2Index\":15,\"PolygonIndex\":10,\"Line1MovementDirection\":\"LineMovementDirection.NoMovement\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":15,\"Line2Index\":16,\"PolygonIndex\":11,\"Line1MovementDirection\":\"LineMovementDirection.Left\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":16,\"Line2Index\":17,\"PolygonIndex\":12,\"Line1MovementDirection\":\"LineMovementDirection.Left\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":17,\"Line2Index\":18,\"PolygonIndex\":13,\"Line1MovementDirection\":\"LineMovementDirection.Left\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":18,\"Line2Index\":19,\"PolygonIndex\":14,\"Line1MovementDirection\":\"LineMovementDirection.Left\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true},{\"Line1Index\":19,\"Line2Index\":20,\"PolygonIndex\":15,\"Line1MovementDirection\":\"LineMovementDirection.Left\",\"Line2MovementDirection\":\"LineMovementDirection.NoMovement\",\"IsTubepresent\":true}]";
 
+        public static List<BoxItemMapping> MappingsList()
+        {
+            var obj = JsonConvert.DeserializeObject<List<BoxItemMapping>>(Res);
+            var result = obj.ToList();
+            return result;
+        }
+        public static List<BoxItemMapping> MappingsList(List<Lins> linses, List<PolyGons> gonses)
+        {
+            var obj = JsonConvert.DeserializeObject<List<BoxItemMapping>>(Res);
+            var result = obj.Select(x=>
+            {
+
+                return x;
+            }).ToList();
+            return result;
+        }
+    }
+
+    public class BoxItemMapping
+    {
+        private string _line1MovementDirection;
+        private string _line2MovementDirection;
+        public int Line1Index { get; set; }
+        public int Line2Index { get; set; }
+        public int PolygonIndex { get; set; }
+
+        public string Line1MovementDirection
+        {
+            get { return _line1MovementDirection; }
+            set
+            {
+                _line1MovementDirection = value;
+                Line1MovementDirectionMovement = ConvertToMovement(value);
+            }
+        }
+
+        public string Line2MovementDirection
+        {
+            get { return _line2MovementDirection; }
+            set
+            {
+                _line2MovementDirection = value;
+                Line2MovementDirectionMovement = ConvertToMovement(value);
+            }
+        }
+
+        public Movement Line1MovementDirectionMovement { get; set; }
+        public Movement Line2MovementDirectionMovement { get; set; }
+        public bool IsTubepresent { get; set; }
+
+        public static Movement ConvertToMovement(string value)
+        {
+            switch (value)
+            {
+                case "LineMovementDirection.Left":
+                    return Movement.Left;
+                case "LineMovementDirection.NoMovement":
+                    return Movement.NoMovement;
+                case "LineMovementDirection.Right":
+                    return Movement.Right;
+            }
+
+            return Movement.Left;
+        }
+    }
+
+    public enum Movement
+    {
+        NoMovement,
+        Right,
+        Left
     }
 }

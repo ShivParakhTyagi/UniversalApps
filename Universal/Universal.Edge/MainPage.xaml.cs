@@ -376,6 +376,208 @@ namespace Universal.Edge
             }
         }
 
+        private async void Adjust2_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                var gon = Data.Gon();
+                var lines = Data.Lines();
+                var mapping = Data.MappingsList();
+
+                foreach (var linse in lines)
+                {
+                    linse.Sort();
+                }
+/*
+
+                var rects = new List<Rct>();
+                for (int i = 0; i < lines.Count - 1; i++)
+                {
+                    rects.Add(new Rct()
+                    {
+                        Left = lines[i],
+                        Right = lines[i + 1]
+                    });
+                }
+*/
+
+                for (int i = 0; i < mapping.Count; i++)
+                {
+                    var mping = mapping[i];
+                    mping.PolygonIndex--;
+                    var left = lines[mping.Line1Index];
+                    var right = lines[mping.Line2Index];
+                    var delta = Math.Abs(left.Down.X - right.Down.X) /*/ 2*/;
+                    delta = 100;
+                    if (mping.IsTubepresent)
+                    {
+                        PolyGons prevGons = null;
+                        PolyGons nextPgon = null;
+
+                        if ((mping.PolygonIndex - 1) > 0)
+                        {
+                            prevGons = gon[mping.PolygonIndex - 1];
+                        }
+
+                        if ((mping.PolygonIndex + 1) < gon.Count)
+                        {
+                            nextPgon = gon[mping.PolygonIndex + 1];
+                        }
+
+                        PolyGons pgon = null;
+                        if (mping.PolygonIndex >= 0 && mping.PolygonIndex < gon.Count)
+                        {
+                            pgon = gon[mping.PolygonIndex];
+                        }
+
+                        if (pgon != null)
+                        {
+                            // left movement = -1
+                            // right movement = +1
+                            List<Point> pts;
+                            pts = pgon.PaddedPoints;
+                            bool forceBreak = false;
+                            int failedDetection = 0;
+                            while (mping.Line1MovementDirectionMovement != Movement.NoMovement &&
+                                   /*pgon.get_polygon_direction(pts, left) is Direction
+                                       directionOfPolygonFromLine &&
+                                   directionOfPolygonFromLine != Direction.Right && */forceBreak == false)
+                            {
+                                //switch (directionOfPolygonFromLine)
+                                //{
+                                //    case Direction.Intersect:
+                                //    case Direction.Left:
+                                if (pgon.get_polygon_direction(pts, left) is Direction
+                                        directionOfPolygonFromLine &&
+                                    directionOfPolygonFromLine == Direction.Intersect &&
+                                    pgon.GetAllFineIntersectingLines(pgon.GetLines(pts),
+                                        left).Any() == false)
+                                {
+                                    forceBreak = true;
+                                    break;
+                                }
+
+                                //move to left
+                                var nextFit = await
+                                    MoveToDeltaAndExit(
+                                        left,
+                                        pgon,
+                                        pts,
+                                        prevGons,
+                                        prevGons?.PaddedPoints ?? new List<Point>(),
+                                        delta,
+                                        (mping.Line1MovementDirectionMovement==Movement.Left?-1:1)* 2
+                                    );
+
+                                if (left.Up == nextFit.Up &&
+                                    left.Down == nextFit.Down)
+                                {
+                                    if (pgon.get_polygon_direction(pts, left) != Direction.Right)
+                                    {
+                                        failedDetection++;
+                                        if (failedDetection > 10)
+                                        {
+                                            pts = pgon.Points;
+                                        }
+
+                                        //Force Move
+                                        var newX = pts.Min(x => x.X) - 1;
+                                        left.Up = new Point(newX, nextFit.Up.Y);
+                                        left.Down = new Point(left.Down.X - 1,
+                                            left.Down.Y);
+                                    }
+                                }
+                                else
+                                {
+                                    left.Up = nextFit.Up;
+                                    left.Down = nextFit.Down;
+                                }
+
+                                break;
+                                //    case Direction.Right:
+                                //        // it's fine
+                                //        break;
+                                //}
+                            }
+
+                            failedDetection = 0;
+                            forceBreak = false;
+                            while (mping.Line2MovementDirectionMovement != Movement.NoMovement &&
+                                   /*pgon.get_polygon_direction(pts, right) is Direction
+                                       directionOfPolygonFromLine &&
+                                   directionOfPolygonFromLine != Direction.Left && */forceBreak == false)
+                            {
+                                //switch (directionOfPolygonFromLine)
+                                //{
+                                //    case Direction.Intersect:
+                                //    case Direction.Right:
+
+                                if (pgon.get_polygon_direction(pts, right) is Direction directionOfPolygonFromLine &&
+                                    directionOfPolygonFromLine == Direction.Intersect &&
+                                    pgon.GetAllFineIntersectingLines(pgon.GetLines(pts),
+                                        right).Any() == false)
+                                {
+                                    forceBreak = true;
+                                    break;
+                                }
+
+                                //move to right
+                                var nextFit = await
+                                    MoveToDeltaAndExit(
+                                        right,
+                                        pgon,
+                                        pts,
+                                        nextPgon,
+                                        nextPgon?.PaddedPoints ?? new List<Point>(),
+                                        delta,
+
+                                        (mping.Line2MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
+                                    );
+
+                                if (right.Up == nextFit.Up &&
+                                    right.Down == nextFit.Down)
+                                {
+                                    if (pgon.get_polygon_direction(pts, right) != Direction.Left)
+                                    {
+                                        failedDetection++;
+                                        if (failedDetection > 10)
+                                        {
+                                            pts = pgon.Points;
+                                        }
+
+                                        //Force Move
+                                        var newX = pts.Max(x => x.X) + 1;
+                                        right.Up = new Point(newX, nextFit.Up.Y);
+                                        right.Down = new Point(right.Down.X - 1,
+                                            right.Down.Y);
+                                    }
+                                }
+                                else
+                                {
+                                    right.Up = nextFit.Up;
+                                    right.Down = nextFit.Down;
+                                }
+
+                                break;
+                                //    case Direction.Left:
+                                //        // it's fine
+                                //        break;
+                                //}
+                            }
+                        }
+                    }
+
+                }
+
+                DrawLines(lines);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+
         private async Task<Lins> MoveToDeltaAndExit(Lins line, PolyGons pgon, List<Point> pgonLinses, PolyGons nextPgon,
             List<Point> nextPgonLinses, double rctMid, int move)
         {
@@ -689,7 +891,17 @@ namespace Universal.Edge
 
         public double AngleRadians
         {
-            get { return Math.Atan((Up.Y - Down.Y) / (Up.X - Down.X)); }
+            get { return Math.Atan((Down.Y - Up.Y) / (Down.X - Up.X)); }
+        }
+
+        public double AngleDegrees
+        {
+            get { return Helpers.ConvertRadiansToDegrees(AngleRadians); }
+        }
+
+        public double AngleFromTopDegrees
+        {
+            get { return 90- AngleDegrees; }
         }
 
         public double Cofficient
@@ -715,6 +927,16 @@ namespace Universal.Edge
 
         public Line GetLine()
         {
+            if (Block == null)
+            {
+                Block = new TextBlock();
+                var b = new Binding()
+                {
+                    Path = new PropertyPath(nameof(Data)),
+                    Source = this,
+                };
+                Block.SetBinding(TextBlock.TextProperty, b);
+            }
             var line = new Line()
             {
                 Stroke = new SolidColorBrush(Colors.Green),
@@ -724,9 +946,19 @@ namespace Universal.Edge
             line.Y1 = Up.Y;
             line.X2 = Down.X;
             line.Y2 = Down.Y;
+            line.DataContext = this;
+            ToolTipService.SetToolTip(line, Block);
             return line;
         }
 
+        public string Data
+        {
+            get { return $"Angle {AngleDegrees}\n" +
+                         $"Angle T {AngleFromTopDegrees}\n" +
+                         $"Down = {Down}\n" +
+                         $"Up = {Up}"; }
+        }
+        public TextBlock Block { get; set; }
         public Line TempLine { get; private set; }
 
         public Line GetTempLine()
@@ -1331,6 +1563,10 @@ namespace Universal.Edge
         //        else:
         //            point.X = point.X + padding
         //    return self
-
+        public static double ConvertRadiansToDegrees(double radians)
+        {
+            double degrees = (180 / Math.PI) * radians;
+            return (degrees);
+        }
     }
 }
