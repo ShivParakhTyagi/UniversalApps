@@ -20,18 +20,30 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button Click="ButtonBase_OnClick" Grid.Column="0" Margin="10" >
                 Begin
             </Button>
             <Button Click="Redraw_OnClick" Grid.Column="1" Margin="10" >
-                Redraw
+                Redraw Upper
             </Button>
-            <Button Click="Adjust_OnClick" Grid.Column="2" Margin="10" >
-                Adjust
+            <Button Click="RedrawLower_OnClick" Grid.Column="2" Margin="10" >
+                Redraw Lower
             </Button>
-            <Button Click="Adjust2_OnClick" Grid.Column="3" Margin="10" >
-                Adjust 2
+            <Button Click="Adjust_OnClick" Grid.Column="3" Margin="10" >
+                Adjust Upper
+            </Button>
+            <Button Click="Adjust2_OnClick" Grid.Column="4" Margin="10" >
+                Adjust Upper 2
+            </Button>
+            <Button Click="AdjustLower_OnClick" Grid.Column="5" Margin="10" >
+                Adjust Lower
+            </Button>
+            <Button Click="AdjustLower2_OnClick" Grid.Column="6" Margin="10" >
+                Adjust Lower 2
             </Button>
         </Grid>
         <Grid Grid.Row="1" >
