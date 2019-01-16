@@ -133,6 +133,7 @@ namespace Universal.Edge
             try
             {
 
+                int speed = 1;
                 var gon = MockData.UpperPolyGon();
                 var lines = MockData.GetUpperLines();
                 var mapping = MockData.UpperMappingsList();
@@ -195,7 +196,7 @@ namespace Universal.Edge
                                         prevGons,
                                         prevGons?.PaddedPoints ?? new List<Point>(),
                                         delta,
-                                        (mping.Line1MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
+                                        (mping.Line1MovementDirectionMovement == Movement.Left ? -1 : 1) * speed
                                     );
 
                                 if (left.Up == nextFit.Up &&
@@ -228,12 +229,6 @@ namespace Universal.Edge
                                     left.Up = nextFit.Up;
                                     left.Down = nextFit.Down;
                                 }
-
-                                break;
-                                //    case Direction.Right:
-                                //        // it's fine
-                                //        break;
-                                //}
                             }
 
                             failedDetection = 0;
@@ -260,7 +255,7 @@ namespace Universal.Edge
                                         nextPgon?.PaddedPoints ?? new List<Point>(),
                                         delta,
 
-                                        (mping.Line2MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
+                                        (mping.Line2MovementDirectionMovement == Movement.Left ? -1 : 1) * speed
                                     );
 
                                 if (right.Up == nextFit.Up &&
@@ -292,11 +287,6 @@ namespace Universal.Edge
                                     right.Down = nextFit.Down;
                                 }
 
-                                break;
-                                //    case Direction.Left:
-                                //        // it's fine
-                                //        break;
-                                //}
                             }
                         }
                     }
@@ -319,7 +309,7 @@ namespace Universal.Edge
         {
             try
             {
-
+                int speed = 3;
                 var gon = MockData.LowerPolyGon();
                 var lines = MockData.GetLowerLines();
                 var mapping = MockData.LowerMappingsList();
@@ -382,7 +372,7 @@ namespace Universal.Edge
                                         prevGons,
                                         prevGons?.PaddedPoints ?? new List<Point>(),
                                         delta,
-                                        (mping.Line1MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
+                                        (mping.Line1MovementDirectionMovement == Movement.Left ? -1 : 1) * speed
                                     );
 
                                 if (left.Up == nextFit.Up &&
@@ -391,14 +381,16 @@ namespace Universal.Edge
                                     if (pgon.get_polygon_direction(pts, left) != Direction.Right)
                                     {
                                         failedDetection++;
-                                        if (failedDetection > 10)
+                                        if (failedDetection > 3)
                                         {
+                                            break;
                                             pts = pgon.Points;
                                         }
 
                                         //Force Move
                                         var newX = pts.Min(x => x.X);
                                         var newPts = pts.Where(x => x.X == newX).ToArray();
+                                        //var maxY = newPts.Min(y => y.Y);
                                         var maxY = newPts.Max(y => y.Y);
                                         var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
 
@@ -415,12 +407,6 @@ namespace Universal.Edge
                                     left.Up = nextFit.Up;
                                     left.Down = nextFit.Down;
                                 }
-
-                                break;
-                                //    case Direction.Right:
-                                //        // it's fine
-                                //        break;
-                                //}
                             }
 
                             failedDetection = 0;
@@ -447,7 +433,7 @@ namespace Universal.Edge
                                         nextPgon?.PaddedPoints ?? new List<Point>(),
                                         delta,
 
-                                        (mping.Line2MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
+                                        (mping.Line2MovementDirectionMovement == Movement.Left ? -1 : 1) * speed
                                     );
 
                                 if (right.Up == nextFit.Up &&
@@ -456,14 +442,16 @@ namespace Universal.Edge
                                     if (pgon.get_polygon_direction(pts, right) != Direction.Left)
                                     {
                                         failedDetection++;
-                                        if (failedDetection > 10)
+                                        if (failedDetection > 3)
                                         {
+                                            break;
                                             pts = pgon.Points;
                                         }
 
                                         //Force Move
                                         var newX = pts.Max(x => x.X);
                                         var newPts = pts.Where(x => x.X == newX).ToArray();
+                                        //var maxY = newPts.Min(y => y.Y);
                                         var maxY = newPts.Max(y => y.Y);
                                         var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
 
@@ -478,12 +466,6 @@ namespace Universal.Edge
                                     right.Up = nextFit.Up;
                                     right.Down = nextFit.Down;
                                 }
-
-                                break;
-                                //    case Direction.Left:
-                                //        // it's fine
-                                //        break;
-                                //}
                             }
                         }
                     }
@@ -517,9 +499,6 @@ namespace Universal.Edge
 
                 void Refresh()
                 {
-                    //intersectingLinesStart = pgon.GetAllIntersectingLines(pgon.GetLines(pgonLinses), lins);
-                    //intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(nextPgon.GetLines(nextPgonLinses), lins) ??
-                    //                       new List<Lins>();
                     intersectingLinesStart = pgon.GetAllFineIntersectingLines(pgon.GetLines(pgonLinses), lins);
                     intersectingLinesEnd =
                         nextPgon?.GetAllFineIntersectingLines(nextPgon.GetLines(nextPgonLinses), lins) ??
@@ -532,26 +511,6 @@ namespace Universal.Edge
 #if DEBUG
                 MyCanvas.Children.Add(lins.GetTempLine());
 #endif
-
-                bool ResetLine()
-                {
-                    var bottomX = lins.Down.X + move;
-                    var limit = (line.Down.X + (move * rctMid));
-                    if (Math.Abs(limit - bottomX) < 1)
-                    {
-                        //fail this operation
-                        lins = line;
-                        return false;
-                    }
-                    else
-                    {
-                        //reset
-                        lins.Up = line.Up;
-                        lins.Down = new Point(bottomX, lins.Down.Y);
-                        return true;
-                    }
-                }
-
                 int count = 0;
                 while (thisHit || nextHit)
                 {
@@ -561,11 +520,6 @@ namespace Universal.Edge
 
                     if (thisHit && nextHit)
                     {
-                        //if (ResetLine() == false)
-                        //{
-                        //    return lins;
-                        //}
-
                         lins.Up = new Point(lins.Up.X + move, lins.Up.Y);
                         if (count > rctMid * 2 || count > 100)
                         {
@@ -589,9 +543,22 @@ namespace Universal.Edge
                     else if (nextHit)
                     {
                         //Reset
-                        if (ResetLine() == false)
+                        var bottomX = lins.Down.X + move;
+                        var limit = (line.Down.X + (move * rctMid));
+                        if (Math.Abs(limit - bottomX) < 1)
                         {
-                            //return lins;
+                            //fail this operation
+                            lins = new Lins()
+                            {
+                                Up = new Point(line.Up.X, line.Up.Y),
+                                Down = new Point(line.Down.X, line.Down.Y),
+                            };
+                        }
+                        else
+                        {
+                            //reset
+                            lins.Up = line.Up;
+                            lins.Down = new Point(bottomX, lins.Down.Y);
                         }
                     }
 

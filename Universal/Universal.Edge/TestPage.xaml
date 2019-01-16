@@ -47,7 +47,7 @@
             </Button>
         </Grid>
         <Grid Grid.Row="1" >
-            <Slider x:Name="SpeedSlider" Maximum="10000" Minimum="1" Value="2000" Header="Speed" StepFrequency="10" />
+            <Slider x:Name="SpeedSlider" Maximum="10000" Minimum="1" Value="1000" Header="Speed" StepFrequency="10" />
         </Grid>
         <Grid Grid.Row="2" >
             <ScrollViewer ZoomMode="Enabled" HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled" HorizontalSnapPointsAlignment="Center" VerticalSnapPointsAlignment="Center" >
