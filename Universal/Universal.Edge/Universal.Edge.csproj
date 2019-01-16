@@ -109,6 +109,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="NewTestData.json" />
     <None Include="test.json" />
     <None Include="testData.json" />
     <None Include="Universal.Edge_TemporaryKey.pfx" />

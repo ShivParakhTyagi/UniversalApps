@@ -23,6 +23,8 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button Click="ButtonBase_OnClick" Grid.Column="0" Margin="10" >
                 Begin
@@ -44,6 +46,12 @@
             </Button>
             <Button Click="AdjustLower2_OnClick" Grid.Column="6" Margin="10" >
                 Adjust Lower 2
+            </Button>
+            <Button Click="Adjust3_OnClick" Grid.Column="7" Margin="10" >
+                Adjust Upper 3
+            </Button>
+            <Button Click="AdjustLower3_OnClick" Grid.Column="8" Margin="10" >
+                Adjust Lower 3
             </Button>
         </Grid>
         <Grid Grid.Row="1" >

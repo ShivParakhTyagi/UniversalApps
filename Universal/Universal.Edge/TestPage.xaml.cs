@@ -579,5 +579,173 @@ namespace Universal.Edge
             return line;
         }
 
+        private async void Adjust3_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int move = 4;
+                var gon = NewMockData.UpperPolyGon();
+                var lines = NewMockData.GetUpperLines();
+                var mapping = NewMockData.UpperMappingsList();
+
+                //foreach (var linse in lines)
+                //{
+                //    linse.Sort();
+                //}
+
+                DrawLines(lines);
+                DrawPolygons(gon);
+                for (int i = 0; i < mapping.Count; i++)
+                {
+                    var mping = mapping[i];
+                    //mping.PolygonIndex--;//IGNORE THIS for this test data only
+                    var left = lines[mping.Line1Index];
+                    var right = lines[mping.Line2Index];
+                    var delta = Math.Abs(left.Down.X - right.Down.X);
+                    //delta = 100;
+                    if (mping.IsTubepresent)
+                    {
+                        PolyGons prevGons = null;
+                        PolyGons nextPgon = null;
+
+                        if ((mping.PolygonIndex - 1) > 0)
+                        {
+                            prevGons = gon[mping.PolygonIndex - 1];
+                        }
+
+                        if ((mping.PolygonIndex + 1) < gon.Count)
+                        {
+                            nextPgon = gon[mping.PolygonIndex + 1];
+                        }
+
+                        PolyGons pgon = null;
+                        if (mping.PolygonIndex >= 0 && mping.PolygonIndex < gon.Count)
+                        {
+                            pgon = gon[mping.PolygonIndex];
+                        }
+
+                        if (pgon != null)
+                        {
+                            List<Point> pts;
+                            pts = pgon.PaddedPoints;
+
+                            await IsLineBetweeenPolygons(mping.Line1MovementDirectionMovement, pgon, pts, prevGons,
+                                prevGons?.PaddedPoints ?? new List<Point>(), left, move, delta, false);
+                            left.GetLine();
+                            await IsLineBetweeenPolygons(mping.Line2MovementDirectionMovement, pgon, pts, nextPgon,
+                                nextPgon?.PaddedPoints ?? new List<Point>(), right, move, delta, true);
+                            right.GetLine();
+                        }
+                    }
+                }
+
+                DrawLines(lines);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+
+        private async Task IsLineBetweeenPolygons(Movement mpingLineMovementDirectionMovement, PolyGons pgon, List<Point> pts, PolyGons prevGons, List<Point> prevGonsPts,
+            Lins currentLine, int move, double delta, bool invert)
+        {
+            if (mpingLineMovementDirectionMovement != Movement.NoMovement)
+            {
+                var startLine = new Lins()
+                {
+                    Up = currentLine.Up,
+                    Down = currentLine.Down,
+                };
+                var direction = 1;
+
+                Direction finalDirectionOfPolygonForLine1 = Direction.Intersect;
+                Direction finalInvertDirectionOfPolygonForLine1 = Direction.Intersect;
+                switch (mpingLineMovementDirectionMovement)
+                {
+                    // left movement = -1
+                    case Movement.Left:
+                        finalDirectionOfPolygonForLine1 = Direction.Right;
+                        finalInvertDirectionOfPolygonForLine1 = Direction.Left;
+                        direction = -1;
+                        break;
+                    // right movement = +1
+                    case Movement.Right:
+                        finalDirectionOfPolygonForLine1 = Direction.Left;
+                        finalInvertDirectionOfPolygonForLine1 = Direction.Right;
+                        direction = +1;
+                        break;
+                }
+
+                Direction thisPolygonSide;
+                Direction nextPolygonSide;
+                thisPolygonSide = pgon.fine_polygon_direction(pts, startLine);
+                if (prevGons != null)
+                {
+                    nextPolygonSide = prevGons.fine_polygon_direction(prevGonsPts, startLine);
+                }
+                else
+                {
+                    nextPolygonSide = finalInvertDirectionOfPolygonForLine1;
+                }
+
+                MyCanvas.Children.Add(startLine.GetTempLine());
+                while
+                (
+                    thisPolygonSide != finalDirectionOfPolygonForLine1
+                    ||
+                    nextPolygonSide != finalInvertDirectionOfPolygonForLine1
+                )
+                {
+                    startLine.GetTempLine();
+                    await Task.Delay((int)SpeedSlider.Value);
+                    if (startLine.AngleFromTopDegrees > 45)
+                    {
+                        MyCanvas.Children.Remove(startLine.GetTempLine());
+                        //reset by shifting the near box point
+                        startLine = new Lins()
+                        {
+                            Up = new Point(currentLine.Up.X /*+ (direction * move)*/, currentLine.Up.Y),
+                            Down = new Point(startLine.Down.X + (direction * move), startLine.Down.Y),
+                        };
+
+                        MyCanvas.Children.Add(startLine.GetTempLine());
+                        var bottomX = startLine.Down.X + (direction * move);
+                        var limit = (currentLine.Down.X + (direction * delta));
+                        if (Math.Abs(limit - bottomX) < 5)
+                        {
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        startLine.Up = new Point(startLine.Up.X + (direction * move), startLine.Up.Y);
+                    }
+
+                    thisPolygonSide = pgon.fine_polygon_direction(pts, startLine);
+                    if (prevGons != null)
+                    {
+                        nextPolygonSide = prevGons.fine_polygon_direction(prevGonsPts, startLine);
+                    }
+                    else
+                    {
+                        nextPolygonSide = finalInvertDirectionOfPolygonForLine1;
+                    }
+                }
+
+                startLine.Up = new Point(startLine.Up.X + (direction * move), startLine.Up.Y); // extra padding
+                currentLine.Up = startLine.Up;
+                currentLine.Down = startLine.Down;
+
+                MyCanvas.Children.Remove(startLine.GetTempLine());
+            }
+        }
+
+
+        private void AdjustLower3_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+
+        }
     }
 }
