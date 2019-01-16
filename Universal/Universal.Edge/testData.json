@@ -1,0 +1,2937 @@
+﻿UpperPolygons
+[
+[
+{
+X: 87.68652684335625
+,
+Y: 186.0
+}
+,
+{
+X: 81.68652684335625
+,
+Y: 186.0
+}
+,
+{
+X: 82.08386571054375
+,
+Y: 182.14508056640625
+}
+,
+{
+X: 82.68107945566094
+,
+Y: 179.15908813476562
+}
+,
+{
+X: 90.19853551034844
+,
+Y: 165.8880157470703
+}
+,
+{
+X: 95.28653294687187
+,
+Y: 157.20001220703125
+}
+,
+{
+X: 99.1265292847625
+,
+Y: 151.20001220703125
+}
+,
+{
+X: 102.68652684335625
+,
+Y: 146.0
+}
+,
+{
+X: 105.75053746347344
+,
+Y: 141.69601440429688
+}
+,
+{
+X: 108.68652684335625
+,
+Y: 143.0
+}
+,
+{
+X: 110.8865390503875
+,
+Y: 144.0
+}
+,
+{
+X: 95.38254124765312
+,
+Y: 172.80001831054688
+}
+]
+,
+[
+{
+X: 200.8865390503875
+,
+Y: 142.8000030517578
+}
+,
+{
+X: 187.5886569703094
+,
+Y: 186.62403869628906
+}
+,
+{
+X: 182.61201817636407
+,
+Y: 186.62403869628906
+}
+,
+{
+X: 179.70895726327814
+,
+Y: 186.6240234375
+}
+,
+{
+X: 178.68652684335626
+,
+Y: 184.0
+}
+,
+{
+X: 179.4269901001922
+,
+Y: 175.57591247558594
+}
+,
+{
+X: 188.68652684335626
+,
+Y: 156.0
+}
+,
+{
+X: 193.68652684335626
+,
+Y: 146.0
+}
+,
+{
+X: 195.60654027109064
+,
+Y: 142.5600128173828
+}
+,
+{
+X: 199.92653233652032
+,
+Y: 142.5600128173828
+}
+]
+,
+[
+{
+X: 222.96652562265314
+,
+Y: 168.48001098632812
+}
+,
+{
+X: 215.2865329468719
+,
+Y: 169.20001220703125
+}
+,
+{
+X: 218.8865390503875
+,
+Y: 162.0
+}
+,
+{
+X: 221.68652684335626
+,
+Y: 158.0
+}
+,
+{
+X: 222.42517430429376
+,
+Y: 157.66000366210938
+}
+,
+{
+X: 223.68652684335626
+,
+Y: 158.0
+}
+,
+{
+X: 225.84653050546564
+,
+Y: 159.8400115966797
+}
+,
+{
+X: 226.08655125741876
+,
+Y: 162.0
+}
+,
+{
+X: 223.68652684335626
+,
+Y: 168.0
+}
+]
+,
+[
+{
+X: 308.8865390503875
+,
+Y: 190.8000030517578
+}
+,
+{
+X: 305.2865329468719
+,
+Y: 182.40000915527344
+}
+,
+{
+X: 313.11056859140314
+,
+Y: 181.4400177001953
+}
+,
+{
+X: 313.68652684335626
+,
+Y: 182.0
+}
+,
+{
+X: 318.29455906991876
+,
+Y: 188.35202026367188
+}
+,
+{
+X: 318.006534167575
+,
+Y: 188.6400146484375
+}
+]
+,
+[
+{
+X: 356.7944675171844
+,
+Y: 158.2572021484375
+}
+,
+{
+X: 360.68652684335626
+,
+Y: 165.0
+}
+,
+{
+X: 360.68652684335626
+,
+Y: 168.0
+}
+,
+{
+X: 358.03857762460626
+,
+Y: 186.6240234375
+}
+,
+{
+X: 346.8065524781219
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 346.08655125741876
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 346.68652684335626
+,
+Y: 183.0
+}
+,
+{
+X: 347.83652073984064
+,
+Y: 175.57591247558594
+}
+,
+{
+X: 353.2865329468719
+,
+Y: 160.8000030517578
+}
+,
+{
+X: 355.00290257577814
+,
+Y: 157.66000366210938
+}
+]
+,
+[
+{
+X: 430.08655125741876
+,
+Y: 174.0
+}
+,
+{
+X: 431.68652684335626
+,
+Y: 164.0
+}
+,
+{
+X: 433.83288914804376
+,
+Y: 161.24317932128906
+}
+,
+{
+X: 436.08655125741876
+,
+Y: 166.8000030517578
+}
+,
+{
+X: 440.99927098398126
+,
+Y: 179.15908813476562
+}
+,
+{
+X: 442.08655125741876
+,
+Y: 188.40000915527344
+}
+,
+{
+X: 438.48654515390314
+,
+Y: 188.40000915527344
+}
+,
+{
+X: 430.68652684335626
+,
+Y: 183.0
+}
+,
+{
+X: 430.32654149179376
+,
+Y: 181.44000244140625
+}
+]
+,
+[
+{
+X: 480.38098485116876
+,
+Y: 184.55043029785156
+}
+,
+{
+X: 487.63855321054376
+,
+Y: 152.0640106201172
+}
+,
+{
+X: 488.67541844491876
+,
+Y: 151.37281799316406
+}
+,
+{
+X: 492.8225742066375
+,
+Y: 152.0640106201172
+}
+,
+{
+X: 495.68652684335626
+,
+Y: 153.0
+}
+,
+{
+X: 492.8225742066375
+,
+Y: 186.6240234375
+}
+,
+{
+X: 492.68652684335626
+,
+Y: 187.0
+}
+,
+{
+X: 492.48657567148126
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 492.24652440195
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 482.20581395273126
+,
+Y: 185.1310577392578
+}
+]
+,
+[
+{
+X: 515.6865268433562
+,
+Y: 189.0
+}
+,
+{
+X: 515.28656346445
+,
+Y: 188.40000915527344
+}
+,
+{
+X: 519.6065707886687
+,
+Y: 168.48001098632812
+}
+,
+{
+X: 522.1985507691375
+,
+Y: 157.24801635742188
+}
+,
+{
+X: 523.9265781128875
+,
+Y: 155.52001953125
+}
+,
+{
+X: 530.1474033082
+,
+Y: 151.37281799316406
+}
+,
+{
+X: 530.9769321167937
+,
+Y: 151.7875518798828
+}
+,
+{
+X: 530.8865390503875
+,
+Y: 158.40000915527344
+}
+,
+{
+X: 530.6865268433562
+,
+Y: 162.0
+}
+,
+{
+X: 528.6865268433562
+,
+Y: 184.0
+}
+,
+{
+X: 527.6865268433562
+,
+Y: 187.0
+}
+,
+{
+X: 527.28656346445
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 517.6865268433562
+,
+Y: 190.0
+}
+]
+,
+[
+{
+X: 600.24652440195
+,
+Y: 145.44000244140625
+}
+,
+{
+X: 600.6865268433562
+,
+Y: 140.0
+}
+,
+{
+X: 601.6865268433562
+,
+Y: 139.6800079345703
+}
+,
+{
+X: 604.7970004761687
+,
+Y: 138.93121337890625
+}
+,
+{
+X: 607.6865268433562
+,
+Y: 139.0
+}
+,
+{
+X: 610.6865268433562
+,
+Y: 149.0
+}
+,
+{
+X: 612.4865756714812
+,
+Y: 186.0
+}
+,
+{
+X: 611.7665439332
+,
+Y: 185.760009765625
+}
+,
+{
+X: 610.6031528199187
+,
+Y: 185.1310577392578
+}
+,
+{
+X: 601.6865268433562
+,
+Y: 180.0
+}
+,
+{
+X: 600.24652440195
+,
+Y: 168.48001098632812
+}
+]
+,
+[
+{
+X: 650.8865390503875
+,
+Y: 188.40000915527344
+}
+,
+{
+X: 650.6465488160125
+,
+Y: 178.5600128173828
+}
+,
+{
+X: 650.8865390503875
+,
+Y: 175.20001220703125
+}
+,
+{
+X: 653.28656346445
+,
+Y: 164.40000915527344
+}
+,
+{
+X: 656.4065585816375
+,
+Y: 151.20001220703125
+}
+,
+{
+X: 656.982608386325
+,
+Y: 150.3360137939453
+}
+,
+{
+X: 660.36957127695
+,
+Y: 149.2992401123047
+}
+,
+{
+X: 660.7842441285125
+,
+Y: 149.29922485351562
+}
+,
+{
+X: 661.364932605075
+,
+Y: 149.2992401123047
+}
+,
+{
+X: 663.6865268433562
+,
+Y: 150.0
+}
+,
+{
+X: 665.6865268433562
+,
+Y: 152.0
+}
+,
+{
+X: 664.6865268433562
+,
+Y: 163.0
+}
+,
+{
+X: 661.364932605075
+,
+Y: 191.10302734375
+}
+,
+{
+X: 659.5733676636687
+,
+Y: 193.4918212890625
+}
+]
+,
+[
+{
+X: 686.6865268433562
+,
+Y: 187.0
+}
+,
+{
+X: 687.7410922730437
+,
+Y: 179.15908813476562
+}
+,
+{
+X: 696.0354037964812
+,
+Y: 174.1824188232422
+}
+,
+{
+X: 697.6865268433562
+,
+Y: 178.0
+}
+,
+{
+X: 700.6865268433562
+,
+Y: 185.0
+}
+,
+{
+X: 696.4865756714812
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 686.8865390503875
+,
+Y: 187.20001220703125
+}
+]
+,
+[
+{
+X: 721.6865268433562
+,
+Y: 185.0
+}
+,
+{
+X: 725.06586033945
+,
+Y: 163.81442260742188
+}
+,
+{
+X: 733.3602328980437
+,
+Y: 163.81442260742188
+}
+,
+{
+X: 734.74261815195
+,
+Y: 164.16001892089844
+}
+,
+{
+X: 736.0145297730437
+,
+Y: 179.15908813476562
+}
+,
+{
+X: 732.5308871949187
+,
+Y: 186.62403869628906
+}
+,
+{
+X: 727.0565829957
+,
+Y: 191.10302734375
+}
+,
+{
+X: 723.6865268433562
+,
+Y: 192.0
+}
+,
+{
+X: 722.6865268433562
+,
+Y: 190.0
+}
+]
+,
+[
+{
+X: 774.832217761325
+,
+Y: 159.66722106933594
+}
+,
+{
+X: 781.0530429566375
+,
+Y: 155.52001953125
+}
+,
+{
+X: 783.1265903199187
+,
+Y: 160.70401000976562
+}
+,
+{
+X: 783.6865268433562
+,
+Y: 166.0
+}
+,
+{
+X: 784.0865512574187
+,
+Y: 176.40000915527344
+}
+,
+{
+X: 781.0530429566375
+,
+Y: 186.6240234375
+}
+,
+{
+X: 774.4865756714812
+,
+Y: 191.80801391601562
+}
+,
+{
+X: 769.6865878785125
+,
+Y: 193.20001220703125
+}
+,
+{
+X: 768.4865756714812
+,
+Y: 190.8000030517578
+}
+,
+{
+X: 768.4865756714812
+,
+Y: 187.20001220703125
+}
+,
+{
+X: 774.4865756714812
+,
+Y: 160.8000030517578
+}
+]
+,
+[
+{
+X: 816.6865268433562
+,
+Y: 146.0
+}
+,
+{
+X: 818.6865268433562
+,
+Y: 168.0
+}
+,
+{
+X: 817.6865878785125
+,
+Y: 171.072021484375
+}
+,
+{
+X: 810.08343846445
+,
+Y: 190.77122497558594
+}
+,
+{
+X: 809.6688266480437
+,
+Y: 191.60069274902344
+}
+,
+{
+X: 807.6065707886687
+,
+Y: 191.52000427246094
+}
+,
+{
+X: 804.4865756714812
+,
+Y: 182.40000915527344
+}
+,
+{
+X: 805.6865268433562
+,
+Y: 149.0
+}
+,
+{
+X: 805.936221667575
+,
+Y: 145.1520233154297
+}
+,
+{
+X: 808.6865268433562
+,
+Y: 144.0
+}
+,
+{
+X: 812.1570468628875
+,
+Y: 143.0784149169922
+}
+,
+{
+X: 813.6865268433562
+,
+Y: 144.0
+}
+]
+,
+[
+{
+X: 844.0865512574187
+,
+Y: 194.40000915527344
+}
+,
+{
+X: 840.5239902222625
+,
+Y: 188.11703491210938
+}
+,
+{
+X: 837.8465610230437
+,
+Y: 162.72000122070312
+}
+,
+{
+X: 837.8465610230437
+,
+Y: 156.9600067138672
+}
+,
+{
+X: 838.0865512574187
+,
+Y: 156.0
+}
+,
+{
+X: 838.6865268433562
+,
+Y: 155.0
+}
+,
+{
+X: 843.2610507691375
+,
+Y: 153.44642639160156
+}
+,
+{
+X: 846.4865756714812
+,
+Y: 153.60000610351562
+}
+,
+{
+X: 848.6865268433562
+,
+Y: 155.0
+}
+,
+{
+X: 848.7905917847625
+,
+Y: 155.52001953125
+}
+,
+{
+X: 849.6865268433562
+,
+Y: 160.0
+}
+,
+{
+X: 849.6865268433562
+,
+Y: 167.0
+}
+]
+]
+UpperLines
+[
+{
+'AwayBoxPointX': 0.0 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 0.0 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 45.749998629714824 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 45.749998629714824 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 137.49999725942968 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 91.49999725942966 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 137.2499958891445 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 137.2499958891445 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 224.9999945188593 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 182.9999945188593 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 228.7499931485741 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 228.7499931485741 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 274.4999917782889 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 274.4999917782889 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 320.2499904080037 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 320.2499904080037 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 365.9999890377186 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 365.9999890377186 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 411.7500097688073 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 411.7500097688073 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 457.49998629714815 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 457.49998629714815 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 503.2500070282369 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 503.2500070282369 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 548.9999835565778 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 548.9999835565778 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 594.7500042876665 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 594.7500042876665 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 640.4999808160073 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 640.4999808160073 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 686.2500015470962 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 686.2500015470962 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 658.0000222781848 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 732.0000222781848 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 699.7500430092736 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 777.7500430092736 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 823.7586725494664 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 822.5000637403622 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 869.4949833410607 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 868.250084471451 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+,
+{
+'AwayBoxPointX': 914.9999283915487 ,
+'AwayBoxPointY': 55.46777115777782 ,
+'NearBoxPointX': 914.9999283915487 ,
+'NearBoxPointY': 209.4156379066498 ,
+}
+]
+UpperMovementDetails
+[
+{
+'Line1Index': 0
+,
+'Line2Index': 1
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 1
+,
+'Line2Index': 2
+,
+'PolygonIndex': 0
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.Right
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 2
+,
+'Line2Index': 3
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 3
+,
+'Line2Index': 4
+,
+'PolygonIndex': 1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.Right
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 4
+,
+'Line2Index': 5
+,
+'PolygonIndex': 2
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 5
+,
+'Line2Index': 6
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 6
+,
+'Line2Index': 7
+,
+'PolygonIndex': 3
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 7
+,
+'Line2Index': 8
+,
+'PolygonIndex': 4
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 8
+,
+'Line2Index': 9
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 9
+,
+'Line2Index': 10
+,
+'PolygonIndex': 5
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 10
+,
+'Line2Index': 11
+,
+'PolygonIndex': 6
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 11
+,
+'Line2Index': 12
+,
+'PolygonIndex': 7
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 12
+,
+'Line2Index': 13
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 13
+,
+'Line2Index': 14
+,
+'PolygonIndex': 8
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 14
+,
+'Line2Index': 15
+,
+'PolygonIndex': 9
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 15
+,
+'Line2Index': 16
+,
+'PolygonIndex': 10
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 16
+,
+'Line2Index': 17
+,
+'PolygonIndex': 11
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 17
+,
+'Line2Index': 18
+,
+'PolygonIndex': 12
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 18
+,
+'Line2Index': 19
+,
+'PolygonIndex': 13
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 19
+,
+'Line2Index': 20
+,
+'PolygonIndex': 14
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+]
+LowerPolygons
+[
+[
+{
+X: 87.68652684335625
+,
+Y: 84.47895533701319
+}
+,
+{
+X: 79.68652684335625
+,
+Y: 87.47895533701319
+}
+,
+{
+X: 74.68652684335625
+,
+Y: 78.47895533701319
+}
+,
+{
+X: 71.28653294687187
+,
+Y: 71.07896144052881
+}
+,
+{
+X: 67.68653447275078
+,
+Y: 61.478985854591315
+}
+,
+{
+X: 67.68652684335625
+,
+Y: 61.47895533701319
+}
+,
+{
+X: 68.88653142099297
+,
+Y: 60.038983413185065
+}
+,
+{
+X: 69.80813939218437
+,
+Y: 59.46302516123194
+}
+,
+{
+X: 74.68652684335625
+,
+Y: 59.47895533701319
+}
+,
+{
+X: 77.68652684335625
+,
+Y: 64.47895533701319
+}
+]
+,
+[
+{
+X: 165.68652684335626
+,
+Y: 80.47895533701319
+}
+,
+{
+X: 164.8865390503875
+,
+Y: 80.67896754404444
+}
+,
+{
+X: 159.68652684335626
+,
+Y: 81.47895533701319
+}
+,
+{
+X: 157.68652684335626
+,
+Y: 80.47895533701319
+}
+,
+{
+X: 156.68652684335626
+,
+Y: 78.47895533701319
+}
+,
+{
+X: 154.68652684335626
+,
+Y: 73.47895533701319
+}
+,
+{
+X: 152.4065280640594
+,
+Y: 67.23896510263819
+}
+,
+{
+X: 151.68652684335626
+,
+Y: 61.47895533701319
+}
+,
+{
+X: 154.13454014902032
+,
+Y: 61.19099146982569
+}
+,
+{
+X: 155.24049718027032
+,
+Y: 61.121930190528815
+}
+,
+{
+X: 157.68652684335626
+,
+Y: 61.47895533701319
+}
+,
+{
+X: 159.68652684335626
+,
+Y: 63.47895533701319
+}
+,
+{
+X: 160.0865359986297
+,
+Y: 63.87897975107569
+}
+,
+{
+X: 163.68652684335626
+,
+Y: 73.47895533701319
+}
+]
+,
+[
+{
+X: 298.68652684335626
+,
+Y: 77.47895533701319
+}
+,
+{
+X: 303.04675633554376
+,
+Y: 80.53083521982569
+}
+,
+{
+X: 302.68652684335626
+,
+Y: 86.47895533701319
+}
+,
+{
+X: 300.48654515390314
+,
+Y: 87.87897975107569
+}
+,
+{
+X: 299.68652684335626
+,
+Y: 87.47895533701319
+}
+,
+{
+X: 291.68652684335626
+,
+Y: 82.47895533701319
+}
+,
+{
+X: 293.75696141366876
+,
+Y: 80.19901759287256
+}
+,
+{
+X: 294.68652684335626
+,
+Y: 79.47895533701319
+}
+]
+,
+[
+{
+X: 401.68652684335626
+,
+Y: 23.47895533701319
+}
+,
+{
+X: 397.68652684335626
+,
+Y: 21.47895533701319
+}
+,
+{
+X: 401.2865329468719
+,
+Y: 23.078961440528815
+}
+]
+,
+[
+{
+X: 412.68652684335626
+,
+Y: 81.47895533701319
+}
+,
+{
+X: 411.5375095093719
+,
+Y: 76.05186183115381
+}
+,
+{
+X: 411.60657078866876
+,
+Y: 75.01499659677881
+}
+,
+{
+X: 411.9521823609344
+,
+Y: 73.97822291513819
+}
+,
+{
+X: 418.51855809335626
+,
+Y: 73.28699977060694
+}
+,
+{
+X: 419.2865329468719
+,
+Y: 73.47898585459131
+}
+,
+{
+X: 428.88656956796564
+,
+Y: 81.92698390146631
+}
+,
+{
+X: 429.68652684335626
+,
+Y: 83.47895533701319
+}
+,
+{
+X: 430.6145663941375
+,
+Y: 85.38300807138819
+}
+,
+{
+X: 431.44409520273126
+,
+Y: 88.49345118662256
+}
+,
+{
+X: 426.6665378296844
+,
+Y: 91.87760646006006
+}
+,
+{
+X: 425.47211033945
+,
+Y: 92.47477442881006
+}
+,
+{
+X: 421.6865573609344
+,
+Y: 90.27897364756006
+}
+,
+{
+X: 414.68652684335626
+,
+Y: 83.47895533701319
+}
+]
+,
+[
+{
+X: 456.24655491952814
+,
+Y: 61.478985854591315
+}
+,
+{
+X: 461.30392796640314
+,
+Y: 53.656964370216315
+}
+,
+{
+X: 461.30395848398126
+,
+Y: 53.65699488779444
+}
+,
+{
+X: 479.21985203866876
+,
+Y: 77.54487330576319
+}
+,
+{
+X: 479.28656346445
+,
+Y: 80.19898707529444
+}
+,
+{
+X: 469.68652684335626
+,
+Y: 81.47895533701319
+}
+,
+{
+X: 467.68652684335626
+,
+Y: 80.47895533701319
+}
+,
+{
+X: 466.08655125741876
+,
+Y: 79.47898585459131
+}
+,
+{
+X: 459.68652684335626
+,
+Y: 69.47895533701319
+}
+]
+,
+[
+{
+X: 484.68652684335626
+,
+Y: 118.47895533701319
+}
+,
+{
+X: 485.28656346445
+,
+Y: 119.07896144052881
+}
+,
+{
+X: 485.046573230075
+,
+Y: 119.07896144052881
+}
+]
+,
+[
+{
+X: 503.190616198825
+,
+Y: 82.27262599131006
+}
+,
+{
+X: 495.68652684335626
+,
+Y: 85.47895533701319
+}
+,
+{
+X: 493.68652684335626
+,
+Y: 84.47895533701319
+}
+,
+{
+X: 492.24652440195
+,
+Y: 83.07896144052881
+}
+,
+{
+X: 488.8865390503875
+,
+Y: 71.07896144052881
+}
+,
+{
+X: 488.67541844491876
+,
+Y: 61.536603042091315
+}
+,
+{
+X: 496.9697910035125
+,
+Y: 65.68381983896631
+}
+,
+{
+X: 498.00659520273126
+,
+Y: 66.37498194834131
+}
+]
+,
+[
+{
+X: 529.6865268433562
+,
+Y: 57.158978530372565
+}
+,
+{
+X: 534.294620105075
+,
+Y: 55.31580836435694
+}
+,
+{
+X: 537.6865268433562
+,
+Y: 56.47895533701319
+}
+,
+{
+X: 538.6865268433562
+,
+Y: 58.47895533701319
+}
+,
+{
+X: 541.2066074097625
+,
+Y: 68.10297877451319
+}
+,
+{
+X: 544.9115024292937
+,
+Y: 83.51682765146631
+}
+,
+{
+X: 543.4185214722625
+,
+Y: 83.51682765146631
+}
+,
+{
+X: 535.6865268433562
+,
+Y: 81.47895533701319
+}
+,
+{
+X: 534.4865756714812
+,
+Y: 80.67896754404444
+}
+,
+{
+X: 534.006534167575
+,
+Y: 80.19898707529444
+}
+,
+{
+X: 532.6865268433562
+,
+Y: 77.47895533701319
+}
+,
+{
+X: 530.1474033082
+,
+Y: 69.83100611826319
+}
+,
+{
+X: 529.6865268433562
+,
+Y: 64.35896021982569
+}
+]
+,
+[
+{
+X: 573.6865268433562
+,
+Y: 81.47895533701319
+}
+,
+{
+X: 570.006534167575
+,
+Y: 68.67896754404444
+}
+,
+{
+X: 570.5825839722625
+,
+Y: 68.10297877451319
+}
+,
+{
+X: 575.7666049683562
+,
+Y: 65.68381983896631
+}
+,
+{
+X: 577.6865268433562
+,
+Y: 66.27897364756006
+}
+,
+{
+X: 579.6865268433562
+,
+Y: 67.47895533701319
+}
+,
+{
+X: 581.6865268433562
+,
+Y: 73.47895533701319
+}
+,
+{
+X: 584.0610385621062
+,
+Y: 82.27262599131006
+}
+,
+{
+X: 584.4065585816375
+,
+Y: 83.65498072763819
+}
+,
+{
+X: 584.3265414917937
+,
+Y: 84.71122462412256
+}
+,
+{
+X: 582.9665561402312
+,
+Y: 84.51896388193506
+}
+,
+{
+X: 576.6865268433562
+,
+Y: 83.47895533701319
+}
+,
+{
+X: 574.0865512574187
+,
+Y: 81.87897975107569
+}
+]
+,
+[
+{
+X: 598.6865268433562
+,
+Y: 23.47895533701319
+}
+,
+{
+X: 599.28656346445
+,
+Y: 15.87897975107569
+}
+,
+{
+X: 600.24652440195
+,
+Y: 15.398968764747565
+}
+,
+{
+X: 601.6865878785125
+,
+Y: 16.262982436622565
+}
+,
+{
+X: 606.4865756714812
+,
+Y: 19.47895533701319
+}
+,
+{
+X: 606.6865268433562
+,
+Y: 20.47895533701319
+}
+,
+{
+X: 599.9585605347625
+,
+Y: 23.17500025888819
+}
+]
+,
+[
+{
+X: 611.0178256714812
+,
+Y: 63.610211440528815
+}
+,
+{
+X: 616.5751987183562
+,
+Y: 56.04578883310694
+}
+,
+{
+X: 620.6865268433562
+,
+Y: 62.47895533701319
+}
+,
+{
+X: 624.150577136325
+,
+Y: 78.47099024912256
+}
+,
+{
+X: 623.7415195191375
+,
+Y: 84.71122462412256
+}
+,
+{
+X: 616.6865268433562
+,
+Y: 82.47895533701319
+}
+,
+{
+X: 614.8865390503875
+,
+Y: 81.87897975107569
+}
+,
+{
+X: 614.6465488160125
+,
+Y: 81.63895899912256
+}
+,
+{
+X: 612.4865756714812
+,
+Y: 75.87897975107569
+}
+]
+,
+[
+{
+X: 671.6865268433562
+,
+Y: 80.47895533701319
+}
+,
+{
+X: 665.046573230075
+,
+Y: 78.75898463388819
+}
+,
+{
+X: 663.6065707886687
+,
+Y: 74.43897730966944
+}
+,
+{
+X: 662.85785252695
+,
+Y: 71.90461451670069
+}
+,
+{
+X: 660.4865756714812
+,
+Y: 62.67896754404444
+}
+,
+{
+X: 660.4865756714812
+,
+Y: 56.67896754404444
+}
+,
+{
+X: 660.6865268433562
+,
+Y: 56.47895533701319
+}
+,
+{
+X: 662.85785252695
+,
+Y: 55.31580836435694
+}
+,
+{
+X: 667.3505893433562
+,
+Y: 54.27900416513819
+}
+,
+{
+X: 668.6865268433562
+,
+Y: 55.47895533701319
+}
+,
+{
+X: 670.0865512574187
+,
+Y: 59.078961440528815
+}
+,
+{
+X: 672.6865268433562
+,
+Y: 69.47895533701319
+}
+,
+{
+X: 672.6865268433562
+,
+Y: 72.47895533701319
+}
+,
+{
+X: 672.53461033945
+,
+Y: 76.74299342295069
+}
+]
+,
+[
+{
+X: 703.9265781128875
+,
+Y: 58.598980971778815
+}
+,
+{
+X: 706.15472752695
+,
+Y: 48.87940699716944
+}
+,
+{
+X: 710.8865390503875
+,
+Y: 50.67896754404444
+}
+,
+{
+X: 711.6865268433562
+,
+Y: 52.47895533701319
+}
+,
+{
+X: 712.6865268433562
+,
+Y: 58.47895533701319
+}
+,
+{
+X: 714.6865268433562
+,
+Y: 76.47895533701319
+}
+,
+{
+X: 714.0065952027312
+,
+Y: 78.47099024912256
+}
+,
+{
+X: 710.6865268433562
+,
+Y: 80.47895533701319
+}
+,
+{
+X: 706.0865512574187
+,
+Y: 75.87897975107569
+}
+,
+{
+X: 704.8865390503875
+,
+Y: 72.27897364756006
+}
+]
+,
+[
+{
+X: 745.8018222535125
+,
+Y: 76.05180079599756
+}
+,
+{
+X: 741.986514636325
+,
+Y: 77.54487330576319
+}
+,
+{
+X: 739.9265781128875
+,
+Y: 76.74299342295069
+}
+,
+{
+X: 737.28656346445
+,
+Y: 72.27897364756006
+}
+,
+{
+X: 735.6065707886687
+,
+Y: 68.67896754404444
+}
+,
+{
+X: 733.6865268433562
+,
+Y: 57.47895533701319
+}
+,
+{
+X: 733.3602328980437
+,
+Y: 44.947796889747565
+}
+,
+{
+X: 739.9265781128875
+,
+Y: 48.518963881935065
+}
+,
+{
+X: 742.6865268433562
+,
+Y: 51.47895533701319
+}
+,
+{
+X: 743.6865268433562
+,
+Y: 56.47895533701319
+}
+,
+{
+X: 745.6865268433562
+,
+Y: 70.47895533701319
+}
+]
+,
+[
+{
+X: 776.6865268433562
+,
+Y: 79.47895533701319
+}
+,
+{
+X: 774.4865756714812
+,
+Y: 78.27897364756006
+}
+,
+{
+X: 775.9265781128875
+,
+Y: 57.158978530372565
+}
+,
+{
+X: 776.9058261597625
+,
+Y: 49.095013686622565
+}
+,
+{
+X: 777.3206210816375
+,
+Y: 48.680340835060065
+}
+,
+{
+X: 787.4465366089812
+,
+Y: 45.638958999122565
+}
+,
+{
+X: 787.6865268433562
+,
+Y: 49.47895533701319
+}
+,
+{
+X: 787.6865268433562
+,
+Y: 55.47895533701319
+}
+,
+{
+X: 786.5825839722625
+,
+Y: 64.64698512216944
+}
+,
+{
+X: 784.6865268433562
+,
+Y: 76.47895533701319
+}
+,
+{
+X: 783.126651355075
+,
+Y: 82.27262599131006
+}
+]
+,
+[
+{
+X: 812.6865268433562
+,
+Y: 68.47895533701319
+}
+,
+{
+X: 818.3778720582
+,
+Y: 67.75739771982569
+}
+,
+{
+X: 819.4146152222625
+,
+Y: 68.10297877451319
+}
+,
+{
+X: 819.6865268433562
+,
+Y: 68.47895533701319
+}
+,
+{
+X: 820.8165317261687
+,
+Y: 84.71122462412256
+}
+,
+{
+X: 817.6865878785125
+,
+Y: 85.47898585459131
+}
+,
+{
+X: 817.6865268433562
+,
+Y: 85.47895533701319
+}
+,
+{
+X: 809.28656346445
+,
+Y: 79.47898585459131
+}
+,
+{
+X: 809.046573230075
+,
+Y: 75.87897975107569
+}
+,
+{
+X: 809.046573230075
+,
+Y: 70.11896998545069
+}
+,
+{
+X: 809.6865268433562
+,
+Y: 69.47895533701319
+}
+]
+,
+[
+{
+X: 839.1138339722625
+,
+Y: 76.05180079599756
+}
+,
+{
+X: 842.1665683472625
+,
+Y: 65.79896266123194
+}
+,
+{
+X: 847.4082675660125
+,
+Y: 65.68381983896631
+}
+,
+{
+X: 849.4819369996062
+,
+Y: 66.09858424326319
+}
+,
+{
+X: 851.6865268433562
+,
+Y: 67.47895533701319
+}
+,
+{
+X: 851.6865268433562
+,
+Y: 70.47895533701319
+}
+,
+{
+X: 850.6865268433562
+,
+Y: 76.47895533701319
+}
+,
+{
+X: 848.8865390503875
+,
+Y: 79.47898585459131
+}
+,
+{
+X: 848.6865268433562
+,
+Y: 79.47895533701319
+}
+,
+{
+X: 839.6865268433562
+,
+Y: 78.47895533701319
+}
+,
+{
+X: 839.28656346445
+,
+Y: 78.27897364756006
+}
+]
+]
+LowerLines
+[
+{
+'AwayBoxPointX': 0.0 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 0.0 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 44.00281109462131 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 44.749998629714824 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 91.49999725942966 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 91.49999725942966 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 136.30918680885947 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 136.2499958891445 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 182.9999945188593 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 182.9999945188593 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 228.7499931485741 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 228.7499931485741 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 273.98429657710454 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 273.4999917782889 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 320.2499904080037 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 320.2499904080037 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 365.9999890377186 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 365.9999890377186 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 409.7500097688073 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 411.7500097688073 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 453.49998629714815 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 457.49998629714815 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 502.92741687226004 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 502.2500070282369 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 548.6799445893455 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 547.9999835565778 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 594.4547370123928 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 593.7500042876665 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 640.2255951415123 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 639.4999808160073 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 685.9887260668744 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 685.2500015470962 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 731.744041523063 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 731.0000222781848 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 777.5132297720571 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 776.7500430092736 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 823.2778598314475 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 822.5000637403622 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 869.0367922681806 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 868.250084471451 ,
+'NearBoxPointY': 0.0 ,
+}
+,
+{
+'AwayBoxPointX': 914.9999283915487 ,
+'AwayBoxPointY': 156.43104892943597 ,
+'NearBoxPointX': 914.9999283915487 ,
+'NearBoxPointY': 0.0 ,
+}
+]
+LowerMovementDetails
+[
+{
+'Line1Index': 0
+,
+'Line2Index': 1
+,
+'PolygonIndex': 0
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.Right
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 1
+,
+'Line2Index': 2
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 2
+,
+'Line2Index': 3
+,
+'PolygonIndex': 1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.Right
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 3
+,
+'Line2Index': 4
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 4
+,
+'Line2Index': 5
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 5
+,
+'Line2Index': 6
+,
+'PolygonIndex': 2
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.Right
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 6
+,
+'Line2Index': 7
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 7
+,
+'Line2Index': 8
+,
+'PolygonIndex': -1
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': False
+}
+,
+{
+'Line1Index': 8
+,
+'Line2Index': 9
+,
+'PolygonIndex': 3
+,
+'Line1MovementDirection': LineMovementDirection.NoMovement
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 9
+,
+'Line2Index': 10
+,
+'PolygonIndex': 4
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 10
+,
+'Line2Index': 11
+,
+'PolygonIndex': 5
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 11
+,
+'Line2Index': 12
+,
+'PolygonIndex': 6
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 12
+,
+'Line2Index': 13
+,
+'PolygonIndex': 7
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 13
+,
+'Line2Index': 14
+,
+'PolygonIndex': 8
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 14
+,
+'Line2Index': 15
+,
+'PolygonIndex': 9
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 15
+,
+'Line2Index': 16
+,
+'PolygonIndex': 10
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 16
+,
+'Line2Index': 17
+,
+'PolygonIndex': 11
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 17
+,
+'Line2Index': 18
+,
+'PolygonIndex': 12
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 18
+,
+'Line2Index': 19
+,
+'PolygonIndex': 13
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+,
+{
+'Line1Index': 19
+,
+'Line2Index': 20
+,
+'PolygonIndex': 14
+,
+'Line1MovementDirection': LineMovementDirection.Left
+,
+'Line2MovementDirection': LineMovementDirection.NoMovement
+,
+'IsTubepresent': True
+}
+]
+ 
