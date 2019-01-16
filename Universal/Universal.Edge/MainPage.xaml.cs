@@ -836,6 +836,10 @@ namespace Universal.Edge
             MyCanvas.Children.Remove(lins.TempLine);
             return line;
         }*/
+        private void Navigate_OnClick(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TestPage));
+        }
     }
 
     public class Pair
