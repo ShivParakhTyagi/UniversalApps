@@ -20,6 +20,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Button Click="ButtonBase_OnClick" Grid.Column="0" Margin="10" >
                 It's Magic
@@ -33,7 +34,10 @@
             <Button Click="Adjust2_OnClick" Grid.Column="3" Margin="10" >
                 Adjust 2
             </Button>
-            <Button Click="Navigate_OnClick" Grid.Column="4" Margin="10" >
+            <Button Click="Adjust3_OnClick" Grid.Column="4" Margin="10" >
+                Adjust 3
+            </Button>
+            <Button Click="Navigate_OnClick" Grid.Column="5" Margin="10" >
                 Navigate
             </Button>
         </Grid>

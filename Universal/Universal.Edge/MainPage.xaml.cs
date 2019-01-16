@@ -104,7 +104,7 @@ namespace Universal.Edge
                     }
                 }
 
-                Redraw_OnClick(sender, e);
+                //Redraw_OnClick(sender, e);
             }
             catch (Exception ex)
             {
@@ -232,7 +232,7 @@ namespace Universal.Edge
                                     case Direction.Intersect:
                                     case Direction.Left:
                                         if (directionOfPolygonFromLine == Direction.Intersect &&
-                                            pgon.GetAllFineIntersectingLines(pgon.GetLines(pts), 
+                                            pgon.GetAllFineIntersectingLines(pgon.GetLines(pts),
                                                 pair.Rct.Left).Any() == false)
                                         {
                                             forceBreak = true;
@@ -266,7 +266,7 @@ namespace Universal.Edge
                                                 var newPts = pts.Where(x => x.X == newX).ToArray();
                                                 var maxY = newPts.Max(y => y.Y);
                                                 var newPoint = newPts.FirstOrDefault(y => y.Y == maxY);
-                                                
+
                                                 var intersectingPoint = Lins.GetPointPassingFromLineABIntersectsAtY(pair.Rct.Left.Down,
                                                     newPoint, pair.Rct.Left.Up.Y);
 
@@ -317,7 +317,7 @@ namespace Universal.Edge
                                             );
 
                                         if (pair.Rct.Right.Up == nextFit.Up &&
-                                            pair.Rct.Right.Down == nextFit.Down )
+                                            pair.Rct.Right.Down == nextFit.Down)
                                         {
                                             if (pgon.get_polygon_direction(pts, pair.Rct.Right) != Direction.Left)
                                             {
@@ -406,18 +406,18 @@ namespace Universal.Edge
                 {
                     linse.Sort();
                 }
-/*
+                /*
 
-                var rects = new List<Rct>();
-                for (int i = 0; i < lines.Count - 1; i++)
-                {
-                    rects.Add(new Rct()
-                    {
-                        Left = lines[i],
-                        Right = lines[i + 1]
-                    });
-                }
-*/
+                                var rects = new List<Rct>();
+                                for (int i = 0; i < lines.Count - 1; i++)
+                                {
+                                    rects.Add(new Rct()
+                                    {
+                                        Left = lines[i],
+                                        Right = lines[i + 1]
+                                    });
+                                }
+                */
 
                 for (int i = 0; i < mapping.Count; i++)
                 {
@@ -484,7 +484,7 @@ namespace Universal.Edge
                                         prevGons,
                                         prevGons?.PaddedPoints ?? new List<Point>(),
                                         delta,
-                                        (mping.Line1MovementDirectionMovement==Movement.Left?-1:1)* 2
+                                        (mping.Line1MovementDirectionMovement == Movement.Left ? -1 : 1) * 2
                                     );
 
                                 if (left.Up == nextFit.Up &&
@@ -617,6 +617,155 @@ namespace Universal.Edge
             }
         }
 
+        private async void Adjust3_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int move = 4;
+                var gon = Data.Gon();
+                var lines = Data.Lines();
+                var mapping = Data.MappingsList();
+
+                foreach (var linse in lines)
+                {
+                    linse.Sort();
+                }
+                for (int i = 0; i < mapping.Count; i++)
+                {
+                    var mping = mapping[i];
+                    mping.PolygonIndex--;//IGNORE THIS for this test data only
+                    var left = lines[mping.Line1Index];
+                    var right = lines[mping.Line2Index];
+                    var delta = Math.Abs(left.Down.X - right.Down.X);
+                    //delta = 100;
+                    if (mping.IsTubepresent)
+                    {
+                        PolyGons prevGons = null;
+                        PolyGons nextPgon = null;
+
+                        if ((mping.PolygonIndex - 1) > 0)
+                        {
+                            prevGons = gon[mping.PolygonIndex - 1];
+                        }
+
+                        if ((mping.PolygonIndex + 1) < gon.Count)
+                        {
+                            nextPgon = gon[mping.PolygonIndex + 1];
+                        }
+
+                        PolyGons pgon = null;
+                        if (mping.PolygonIndex >= 0 && mping.PolygonIndex < gon.Count)
+                        {
+                            pgon = gon[mping.PolygonIndex];
+                        }
+
+                        if (pgon != null)
+                        {
+                            List<Point> pts;
+                            pts = pgon.PaddedPoints;
+
+                            var currentLine = left;
+                            if (mping.Line1MovementDirectionMovement != Movement.NoMovement)
+                            {
+                                var startLine = new Lins()
+                                {
+                                    Up = left.Up,
+                                    Down = left.Down,
+                                };
+                                var direction = 1;
+
+                                Direction finalDirectionOfPolygonForLine1 = Direction.Intersect;
+                                Direction finalInvertDirectionOfPolygonForLine1 = Direction.Intersect;
+                                switch (mping.Line1MovementDirectionMovement)
+                                {
+                                    // left movement = -1
+                                    case Movement.Left:
+                                        finalDirectionOfPolygonForLine1 = Direction.Right;
+                                        finalInvertDirectionOfPolygonForLine1 = Direction.Left;
+                                        direction = -1;
+                                        break;
+                                    // right movement = +1
+                                    case Movement.Right:
+                                        finalDirectionOfPolygonForLine1 = Direction.Left;
+                                        finalInvertDirectionOfPolygonForLine1 = Direction.Right;
+                                        direction = +1;
+                                        break;
+                                }
+
+                                Direction thisPolygonSide;
+                                Direction nextPolygonSide;
+                                thisPolygonSide = pgon.fine_polygon_direction(pts, startLine);
+                                if (prevGons != null)
+                                {
+                                    nextPolygonSide = prevGons.fine_polygon_direction(pts, startLine);
+                                }
+                                else
+                                {
+                                    nextPolygonSide = finalInvertDirectionOfPolygonForLine1;
+                                }
+
+                                MyCanvas.Children.Add(startLine.GetTempLine());
+                                while
+                                (
+                                    thisPolygonSide != finalDirectionOfPolygonForLine1
+                                    ||
+                                    nextPolygonSide != finalInvertDirectionOfPolygonForLine1
+                                )
+                                {
+                                    startLine.GetTempLine();
+                                    await Task.Delay((int) SpeedSlider.Value);
+                                    if (startLine.AngleFromTopDegrees > 20)
+                                    {
+                                        MyCanvas.Children.Remove(startLine.GetTempLine());
+                                        //reset by shifting the near box point
+                                        startLine = new Lins()
+                                        {
+                                            Up = new Point(currentLine.Up.X /*+ (direction * move)*/, currentLine.Up.Y),
+                                            Down = new Point(startLine.Down.X + (direction * move), startLine.Down.Y),
+                                        };
+
+                                        MyCanvas.Children.Add(startLine.GetTempLine());
+                                        var bottomX = startLine.Down.X + (direction * move);
+                                        var limit = (currentLine.Down.X + (direction * delta));
+                                        if (Math.Abs(limit - bottomX) < 5)
+                                        {
+                                            break;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        startLine.Up = new Point(startLine.Up.X + (direction * move), startLine.Up.Y);
+                                    }
+
+                                    thisPolygonSide = pgon.fine_polygon_direction(pts, startLine);
+                                    if (prevGons != null)
+                                    {
+                                        nextPolygonSide = prevGons.fine_polygon_direction(pts, startLine);
+                                    }
+                                    else
+                                    {
+                                        nextPolygonSide = finalInvertDirectionOfPolygonForLine1;
+                                    }
+                                }
+
+                                startLine.Up = new Point(startLine.Up.X + (direction * move), startLine.Up.Y);// extra padding
+                                currentLine.Up = startLine.Up;
+                                currentLine.Down = startLine.Down;
+
+                                MyCanvas.Children.Remove(startLine.GetTempLine());
+                            }
+                        }
+                    }
+                }
+
+                DrawLines(lines);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
+            }
+        }
+
         private async Task<Lins> MoveToDeltaAndExit(Lins line, PolyGons pgon, List<Point> pgonLinses, PolyGons nextPgon,
             List<Point> nextPgonLinses, double rctMid, int move)
         {
@@ -677,7 +826,7 @@ namespace Universal.Edge
                 {
                     count++;
                     lins.GetTempLine(); // to reflect changes on UI
-                    await Task.Delay((int) SpeedSlider.Value);
+                    await Task.Delay((int)SpeedSlider.Value);
 
                     if (thisHit && nextHit)
                     {
@@ -732,110 +881,110 @@ namespace Universal.Edge
             return line;
         }
 
-/*
+        /*
 
-        private async Task<Lins> MoveToLeftAndExit(Lins line, PolyGons pgon, PolyGons nextPgon, double rctMid)
-        {
-            IEnumerable<Lins> Move(Lins lins1)
-            {
-                IEnumerable<Lins> intersectingLinesStart;
-                IEnumerable<Lins> intersectingLinesEnd;
-                bool hitNext;
-                double lastNonHitNextX;
-                lins1.Up = new Point(lins1.Up.X - 1, lins1.Up.Y);
-                intersectingLinesStart = pgon.GetAllIntersectingLines(lins1);
-                intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins1) ?? new List<Lins>();
-                hitNext = intersectingLinesEnd.Any();
-                if (hitNext == false)
+                private async Task<Lins> MoveToLeftAndExit(Lins line, PolyGons pgon, PolyGons nextPgon, double rctMid)
                 {
-                    lastNonHitNextX = lins1.Up.X;
-                }
-
-                lins1.GetTempLine();
-                return intersectingLinesStart;
-            }
-
-            // -x movement
-            Lins lins = new Lins()
-            {
-                Up = new Point(line.Up.X, line.Up.Y),
-                Down = new Point(line.Down.X, line.Down.Y),
-            };
-
-            try
-            {
-
-                MyCanvas.Children.Add(lins.GetTempLine());
-                var intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
-                var intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
-
-                var hitNext = intersectingLinesEnd.Any();
-                var lastNonHitNextX = lins.Up.X;
-                while (intersectingLinesStart.Any())
-                {
-                    await Task.Delay((int) SpeedSlider.Value);
-                    intersectingLinesStart = Move(lins);
-                    if (intersectingLinesStart.Any() == false)
+                    IEnumerable<Lins> Move(Lins lins1)
                     {
+                        IEnumerable<Lins> intersectingLinesStart;
+                        IEnumerable<Lins> intersectingLinesEnd;
+                        bool hitNext;
+                        double lastNonHitNextX;
+                        lins1.Up = new Point(lins1.Up.X - 1, lins1.Up.Y);
+                        intersectingLinesStart = pgon.GetAllIntersectingLines(lins1);
+                        intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins1) ?? new List<Lins>();
+                        hitNext = intersectingLinesEnd.Any();
+                        if (hitNext == false)
+                        {
+                            lastNonHitNextX = lins1.Up.X;
+                        }
 
-                    }
-                }
-
-                return lins;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            MyCanvas.Children.Remove(lins.TempLine);
-            return line;
-        }
-*/
-/*
-
-        private async Task<Lins> MoveToRightAndExit(Lins line, PolyGons pgon, PolyGons nextPgon, double rctMid)
-        {
-
-            // +x movement
-            Lins lins = new Lins()
-            {
-                Up = new Point(line.Up.X, line.Up.Y),
-                Down = new Point(line.Down.X, line.Down.Y),
-            };
-
-            try
-            {
-
-                MyCanvas.Children.Add(lins.GetTempLine());
-                var intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
-                var intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
-
-                var hitNext = intersectingLinesEnd.Any();
-                var lastNonHitNextX = lins.Up.X;
-                while (intersectingLinesStart.Any())
-                {
-                    await Task.Delay((int) SpeedSlider.Value);
-                    lins.Up = new Point(lins.Up.X + 1, lins.Up.Y);
-                    intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
-                    intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
-                    hitNext = intersectingLinesEnd.Any();
-                    if (hitNext == false)
-                    {
-                        lastNonHitNextX = lins.Up.X;
+                        lins1.GetTempLine();
+                        return intersectingLinesStart;
                     }
 
-                    lins.GetTempLine();
-                }
+                    // -x movement
+                    Lins lins = new Lins()
+                    {
+                        Up = new Point(line.Up.X, line.Up.Y),
+                        Down = new Point(line.Down.X, line.Down.Y),
+                    };
 
-                return lins;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            MyCanvas.Children.Remove(lins.TempLine);
-            return line;
-        }*/
+                    try
+                    {
+
+                        MyCanvas.Children.Add(lins.GetTempLine());
+                        var intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
+                        var intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
+
+                        var hitNext = intersectingLinesEnd.Any();
+                        var lastNonHitNextX = lins.Up.X;
+                        while (intersectingLinesStart.Any())
+                        {
+                            await Task.Delay((int) SpeedSlider.Value);
+                            intersectingLinesStart = Move(lins);
+                            if (intersectingLinesStart.Any() == false)
+                            {
+
+                            }
+                        }
+
+                        return lins;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex);
+                    }
+                    MyCanvas.Children.Remove(lins.TempLine);
+                    return line;
+                }
+        */
+        /*
+
+                private async Task<Lins> MoveToRightAndExit(Lins line, PolyGons pgon, PolyGons nextPgon, double rctMid)
+                {
+
+                    // +x movement
+                    Lins lins = new Lins()
+                    {
+                        Up = new Point(line.Up.X, line.Up.Y),
+                        Down = new Point(line.Down.X, line.Down.Y),
+                    };
+
+                    try
+                    {
+
+                        MyCanvas.Children.Add(lins.GetTempLine());
+                        var intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
+                        var intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
+
+                        var hitNext = intersectingLinesEnd.Any();
+                        var lastNonHitNextX = lins.Up.X;
+                        while (intersectingLinesStart.Any())
+                        {
+                            await Task.Delay((int) SpeedSlider.Value);
+                            lins.Up = new Point(lins.Up.X + 1, lins.Up.Y);
+                            intersectingLinesStart = pgon.GetAllIntersectingLines(lins);
+                            intersectingLinesEnd = nextPgon?.GetAllIntersectingLines(lins) ?? new List<Lins>();
+                            hitNext = intersectingLinesEnd.Any();
+                            if (hitNext == false)
+                            {
+                                lastNonHitNextX = lins.Up.X;
+                            }
+
+                            lins.GetTempLine();
+                        }
+
+                        return lins;
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine(ex);
+                    }
+                    MyCanvas.Children.Remove(lins.TempLine);
+                    return line;
+                }*/
         private void Navigate_OnClick(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(TestPage));
@@ -944,7 +1093,7 @@ namespace Universal.Edge
 
         public double AngleFromTopDegrees
         {
-            get { return 90- AngleDegrees; }
+            get { return 90 - Math.Abs(AngleDegrees); }
         }
 
         public double Cofficient
@@ -996,10 +1145,13 @@ namespace Universal.Edge
 
         public string Data
         {
-            get { return $"Angle {AngleDegrees}\n" +
-                         $"Angle T {AngleFromTopDegrees}\n" +
-                         $"Down = {Down}\n" +
-                         $"Up = {Up}"; }
+            get
+            {
+                return $"Angle {AngleDegrees}\n" +
+                       $"Angle T {AngleFromTopDegrees}\n" +
+                       $"Down = {Down}\n" +
+                       $"Up = {Up}";
+            }
         }
         public TextBlock Block { get; set; }
         public Line TempLine { get; private set; }
@@ -1012,7 +1164,7 @@ namespace Universal.Edge
                 {
                     Stroke = new SolidColorBrush(Color.FromArgb(200, 200, 0, 0)),
                     StrokeThickness = 2,
-                    StrokeDashArray = new DoubleCollection() {1}
+                    StrokeDashArray = new DoubleCollection() { 1 }
                 };
             }
 
@@ -1121,9 +1273,9 @@ namespace Universal.Edge
             }
         }
 
-        private void GeneratePaddedPoints(int padding = 4)
+        private void GeneratePaddedPoints(int padding = 0)
         {
-            padding = 1;
+            padding = 0;
             var maxX = MaxX;
             var minx = MinX;
             PaddedPoints = new List<Point>();
@@ -1278,6 +1430,94 @@ namespace Universal.Edge
             {
                 return Direction.Right;
             }
+        }
+
+        public Direction fine_polygon_direction(List<Point> points, Lins line)
+        {
+            return PolyGons.get_fine_polygon_direction(points, line);
+        }
+
+        public static Direction get_fine_polygon_direction(List<Point> points, Lins line)
+        {
+            var allDirections = points.Select(p => p.GetDirectionFromLine(line.Down, line.Up)).Distinct().ToList();
+
+            if (allDirections.Count > 1)
+            {
+                return Direction.Intersect;
+            }
+
+            return allDirections.First();
+        }
+
+        // Find the polygon's centroid.
+        public static Point FindCentroid(List<Point> points)
+        {
+            // Add the first point at the end of the array.
+            int num_points = points.Count;
+            Point[] pts = new Point[num_points + 1];
+            points.CopyTo(pts, 0);
+            pts[num_points] = points[0];
+
+            // Find the centroid.
+            double X = 0;
+            double Y = 0;
+            double second_factor;
+            for (int i = 0; i < num_points; i++)
+            {
+                second_factor =
+                    pts[i].X * pts[i + 1].Y -
+                    pts[i + 1].X * pts[i].Y;
+                X += (pts[i].X + pts[i + 1].X) * second_factor;
+                Y += (pts[i].Y + pts[i + 1].Y) * second_factor;
+            }
+
+            // Divide by 6 times the polygon's area.
+            double polygon_area = PolygonArea(points);
+            X /= (6 * polygon_area);
+            Y /= (6 * polygon_area);
+
+            // If the values are negative, the polygon is
+            // oriented counterclockwise so reverse the signs.
+            if (X < 0)
+            {
+                X = -X;
+                Y = -Y;
+            }
+
+            return new Point(X, Y);
+        }
+
+        // Return the polygon's area in "square units."
+        // The value will be negative if the polygon is
+        // oriented clockwise.
+        private static double SignedPolygonArea(List<Point> points)
+        {
+            // Add the first point to the end.
+            int num_points = points.Count();
+            Point[] pts = new Point[num_points + 1];
+            points.CopyTo(pts, 0);
+            pts[num_points] = points[0];
+
+            // Get the areas.
+            double area = 0;
+            for (int i = 0; i < num_points; i++)
+            {
+                area +=
+                    (pts[i + 1].X - pts[i].X) *
+                    (pts[i + 1].Y + pts[i].Y) / 2;
+            }
+
+            // Return the result.
+            return area;
+        }
+
+        // Return the polygon's area in "square units."
+        public static double PolygonArea(List<Point> points)
+        {
+            // Return the absolute value of the signed area.
+            // The signed area is negative if the polyogn is
+            // oriented clockwise.
+            return Math.Abs(SignedPolygonArea(points));
         }
     }
 
@@ -1503,9 +1743,9 @@ namespace Universal.Edge
                 // The lines are parallel (or close enough to it).
                 lines_intersect = false;
                 segments_intersect = false;
-                intersection = new Point(float.NaN, float.NaN);
-                close_p1 = new Point(float.NaN, float.NaN);
-                close_p2 = new Point(float.NaN, float.NaN);
+                intersection = new Point(double.NaN, double.NaN);
+                close_p1 = new Point(double.NaN, double.NaN);
+                close_p2 = new Point(double.NaN, double.NaN);
                 return;
             }
 
@@ -1645,6 +1885,61 @@ namespace Universal.Edge
         {
             double degrees = (180 / Math.PI) * radians;
             return (degrees);
+        }
+        /// <summary>
+        /// How to tell whether a point is to the right or left side of a line
+        /// </summary>
+        /// <param name="c">point to check against</param>
+        /// <param name="a">line point 1</param>
+        /// <param name="b">line point 2</param>
+        /// <returns></returns>
+        public static bool isLeft(this Point c, Point a, Point b)
+        {
+            return DirectionOfLine(c, a, b) > 0;
+        }
+
+
+        /// <summary>
+        /// + Left
+        /// - Right
+        /// 0 Intersect
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        private static double DirectionOfLine(Point c, Point a, Point b)
+        {
+            return ((b.X - a.X) * (c.Y - a.Y) - (b.Y - a.Y) * (c.X - a.X));
+        }
+
+
+        public static Direction GetDirectionFromLine(this Point c, Point a, Point b)
+        {
+            double d;
+            //if (a.Y < b.Y)
+            {
+                d = DirectionOfLine(c, a, b);
+            }
+            //else
+            //{
+            //    d = DirectionOfLine(c, b, a);
+            //}
+
+            if (d > 0)
+            {
+                //return Direction.Right;
+                return Direction.Left;
+            }
+            else if (d < 0)
+            {
+                //return Direction.Left;
+                return Direction.Right;
+            }
+            else
+            {
+                return Direction.Intersect;
+            }
         }
     }
 }
